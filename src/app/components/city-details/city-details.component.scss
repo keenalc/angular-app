@@ -1,0 +1,29 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #09467b;
+}
+.city-details {
+  background: #d0e6e6;
+background-image: url('~/src/assets/images/backgroung.jpg');
+padding: 5%;
+  .heading {
+    @extend .center;
+  }
+  .card {
+    background: #faebd76b;
+  }
+  .city-content {
+    @extend .center;
+    padding: 5px;
+    & div {
+      margin: 10px 20px;
+      & span {
+        margin-right: 20px;
+        color: #3b0c58f2;
+        font-weight: bold;
+      }
+    }
+  }
+}

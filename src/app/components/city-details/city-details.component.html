@@ -1,0 +1,16 @@
+<div class="city-details" *ngIf="cities">
+
+
+    <mat-card flat class="card">
+        <mat-card-title class="heading">
+            Details for {{name}} at 9:00
+        </mat-card-title>
+        <mat-card-content *ngFor="let city of cities" class="city-content">
+           <div><span>Temperature</span> {{city.temp}}</div>
+           <div> <span>Sea Level</span> {{city.seaLevel}} </div>
+           <div> <span>Date</span> {{city.date}}</div>
+        </mat-card-content>
+    </mat-card>
+
+
+</div>

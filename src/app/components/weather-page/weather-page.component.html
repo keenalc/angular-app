@@ -1,0 +1,33 @@
+<div>
+  <h3 class="heading-details">Weather Details</h3>
+    <table *ngIf="weatherDetails" mat-table [dataSource]="weatherDetails" class="mat-elevation-z8">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="cityName">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element">
+                <a fxFlexFill [routerLink]="'city/'+element.name" class="mat-row-link">{{element.name}}</a></td>
+        </ng-container>
+
+        <!-- Temperature Column -->
+        <ng-container matColumnDef="temperature">
+          <th mat-header-cell *matHeaderCellDef> Temperature </th>
+          <td mat-cell *matCellDef="let element"> {{element.main?.temp}} </td>
+        </ng-container>
+
+        <!-- Sunrise Column -->
+        <ng-container matColumnDef="sunrise">
+          <th mat-header-cell *matHeaderCellDef> Sunrise </th>
+          <td mat-cell *matCellDef="let element"> {{element.sys?.sunrise | date:'shortTime' }} </td>
+        </ng-container>
+
+        <!-- Sunset Column -->
+        <ng-container matColumnDef="sunset">
+          <th mat-header-cell *matHeaderCellDef> Sunset </th>
+          <td mat-cell *matCellDef="let element"> {{element.sys?.sunset | date:'shortTime' }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>
